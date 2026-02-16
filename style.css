@@ -385,14 +385,15 @@ h3,span{
 
 
 .containerm {
-  position: relative;
-  width: 50%;
+    position: relative;
+    width: 50%;
+    display:grid;
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 100%;
+  width: 80%;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
@@ -423,4 +424,5 @@ h3,span{
   font-size: 16px;
   padding: 16px 32px;
 }
+
 
