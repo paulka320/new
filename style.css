@@ -1,6 +1,6 @@
 /* Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: "Arial", "Helvetica", sans-serif; color:#111; line-height:1.6; background:#fff;padding-top: 10px; }
+body { font-family: "Arial", "Helvetica", sans-serif; color:#111; line-height:1.6; background:#fff;padding-top: 10px;font-size:18px; }
 
 /* Header */
 header { background:#fff; border-bottom:1px solid #ddd; padding:10px 0;position:sticky; top:0; z-index:1000; }
@@ -423,3 +423,4 @@ h3,span{
   font-size: 16px;
   padding: 16px 32px;
 }
+
