@@ -31,39 +31,289 @@
   </header>
 
   <main>
-    <section class="page-hero container">
-      <h1>Hospital gallery</h1>
-      <p>See our facilities, staff, and the environment where care is delivered.</p>
+    <section class="page-hero container" id="gallery-hero">
+      <h1>Hospital gallery & medical team</h1>
+      <p>Discover our clinical spaces and meet the dedicated medical professionals safeguarding your health in Soroti.</p>
     </section>
 
-    <section class="section-gallery">
+    <!-- NEW: Meet Our Team Section -->
+    <section class="section-team" id="meet-our-team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="team-badge-pill"><i class="fas fa-user-md" aria-hidden="true"></i> Compassionate Clinical Leaders</span>
+          <h2 id="team-heading">Meet Our Team</h2>
+          <p>Our multidisciplinary team of licensed physicians, surgeons, pediatric specialists, and nursing directors combines decades of clinical experience with deep compassion for the Soroti community.</p>
+        </div>
+
+        <!-- Trust Credentials Strip -->
+        <div class="team-trust-strip" id="team-trust-strip">
+          <div class="team-trust-card" id="trust-card-license">
+            <div class="team-trust-icon" aria-hidden="true">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="team-trust-text">
+              <h4>UMDPC Registered</h4>
+              <p>All doctors are fully licensed by Uganda Medical Council</p>
+            </div>
+          </div>
+
+          <div class="team-trust-card" id="trust-card-coverage">
+            <div class="team-trust-icon" aria-hidden="true">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="team-trust-text">
+              <h4>24/7 Physician On-Duty</h4>
+              <p>Round-the-clock emergency doctors & resident surgeons</p>
+            </div>
+          </div>
+
+          <div class="team-trust-card" id="trust-card-safety">
+            <div class="team-trust-icon" aria-hidden="true">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <div class="team-trust-text">
+              <h4>Sterile Protocols</h4>
+              <p>Rigorous hospital-grade sterilization & infection control</p>
+            </div>
+          </div>
+
+          <div class="team-trust-card" id="trust-card-patient">
+            <div class="team-trust-icon" aria-hidden="true">
+              <i class="fas fa-heart-pulse"></i>
+            </div>
+            <div class="team-trust-text">
+              <h4>Patient-Centered Care</h4>
+              <p>Consultations in Ateso and English with personalized care</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medical Staff Grid -->
+        <div class="team-grid" id="team-grid">
+          <!-- Doctor 1: Dr. Micheal Ebelu -->
+          <article class="team-card" id="team-card-ebelu">
+            <div class="team-card-top">
+              <div class="team-photo-wrap">
+                <img 
+                  src="src/assets/images/doctor_michael_1788803234896.jpg" 
+                  alt="Dr. Micheal Ebelu, Chief Medical Officer & Senior Consultant Surgeon"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                >
+                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+              </div>
+              <div class="team-card-info">
+                <div>
+                  <div class="team-header-group">
+                    <h3 class="team-name-title">Dr. Micheal Ebelu</h3>
+                    <span class="team-credentials">MBChB, MMed (Surgery), FCS (ECSA)</span>
+                  </div>
+                  <div class="team-designation">
+                    <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                    <span>Chief Medical Officer & Senior Consultant Surgeon</span>
+                  </div>
+                  <p class="team-bio">
+                    With over 18 years of clinical and operative experience across Uganda's referral healthcare systems, Dr. Ebelu leads clinical operations and surgical governance at St. Anthony Doctors' Avenue. He specializes in major abdominal interventions, acute trauma management, and minimally invasive laparoscopic surgery.
+                  </p>
+                </div>
+                <div class="team-specialties-wrap">
+                  <div class="team-specialties-label">Focus Specialties:</div>
+                  <div class="team-tags-list">
+                    <span class="team-tag">General Surgery</span>
+                    <span class="team-tag">Trauma Resuscitation</span>
+                    <span class="team-tag">Clinical Governance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-card-bottom">
+              <div class="team-schedule-info">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Mon – Sat &bull; 24/7 Emergency On-Call</span>
+              </div>
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-ebelu">
+                <span>Book Consultation</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Doctor 2: Dr. Grace Akello -->
+          <article class="team-card" id="team-card-akello">
+            <div class="team-card-top">
+              <div class="team-photo-wrap">
+                <img 
+                  src="src/assets/images/doctor_grace_1788803250000.jpg" 
+                  alt="Dr. Grace Akello, Lead Consultant Pediatrician"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                >
+                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+              </div>
+              <div class="team-card-info">
+                <div>
+                  <div class="team-header-group">
+                    <h3 class="team-name-title">Dr. Grace Akello</h3>
+                    <span class="team-credentials">MBChB, MMed (Pediatrics & Child Health)</span>
+                  </div>
+                  <div class="team-designation">
+                    <i class="fas fa-baby" aria-hidden="true"></i>
+                    <span>Head of Pediatrics & Neonatal Care</span>
+                  </div>
+                  <p class="team-bio">
+                    Dr. Akello brings 14 years of specialized pediatric care, newborn resuscitation, and family health guidance. Known for her comforting, patient-centered approach with young children and mothers, she leads our specialized pediatric ward, child nutrition clinic, and immunization monitoring programs.
+                  </p>
+                </div>
+                <div class="team-specialties-wrap">
+                  <div class="team-specialties-label">Focus Specialties:</div>
+                  <div class="team-tags-list">
+                    <span class="team-tag">Neonatology</span>
+                    <span class="team-tag">Pediatric Critical Care</span>
+                    <span class="team-tag">Childhood Vaccines</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-card-bottom">
+              <div class="team-schedule-info">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Daily &bull; 24-Hour Pediatric Ward Coverage</span>
+              </div>
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-akello">
+                <span>Book Pediatric Care</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Doctor 3: Dr. Patrick Ochen -->
+          <article class="team-card" id="team-card-ochen">
+            <div class="team-card-top">
+              <div class="team-photo-wrap">
+                <img 
+                  src="src/assets/images/doctor_patrick_1788803263571.jpg" 
+                  alt="Dr. Patrick Ochen, Head of Internal Medicine"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                >
+                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+              </div>
+              <div class="team-card-info">
+                <div>
+                  <div class="team-header-group">
+                    <h3 class="team-name-title">Dr. Patrick Ochen</h3>
+                    <span class="team-credentials">MBChB, MMed (Internal Medicine), MSc</span>
+                  </div>
+                  <div class="team-designation">
+                    <i class="fas fa-heart-pulse" aria-hidden="true"></i>
+                    <span>Senior Physician & Head of Internal Medicine</span>
+                  </div>
+                  <p class="team-bio">
+                    Specializing in complex adult diagnostics and long-term metabolic health, Dr. Ochen designs personalized disease management plans for hypertension, heart disease, diabetes, and acute infections. He leads evidence-based clinical audits to ensure superior recovery outcomes.
+                  </p>
+                </div>
+                <div class="team-specialties-wrap">
+                  <div class="team-specialties-label">Focus Specialties:</div>
+                  <div class="team-tags-list">
+                    <span class="team-tag">Cardiovascular Health</span>
+                    <span class="team-tag">Diabetes Care</span>
+                    <span class="team-tag">Infectious Diseases</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-card-bottom">
+              <div class="team-schedule-info">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Mon – Fri &bull; 8:00 AM – 6:00 PM</span>
+              </div>
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-ochen">
+                <span>Book Medical Visit</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Staff 4: Sister Mary Apio -->
+          <article class="team-card" id="team-card-apio">
+            <div class="team-card-top">
+              <div class="team-photo-wrap">
+                <img 
+                  src="src/assets/images/nurse_mary_1788803276059.jpg" 
+                  alt="Sister Mary Apio, Director of Nursing Services"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                >
+                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+              </div>
+              <div class="team-card-info">
+                <div>
+                  <div class="team-header-group">
+                    <h3 class="team-name-title">Sister Mary Apio</h3>
+                    <span class="team-credentials">BSN, RN, Dip. Midwifery & Healthcare Mgt</span>
+                  </div>
+                  <div class="team-designation">
+                    <i class="fas fa-user-nurse" aria-hidden="true"></i>
+                    <span>Director of Nursing & Patient Safety Lead</span>
+                  </div>
+                  <p class="team-bio">
+                    Sister Mary coordinates our nursing units and inpatient ward operations with an unwavering focus on sterile safety, maternal dignity, and empathetic bedside care. She oversees 24-hour triage, post-operative monitoring, and patient comfort advocacy throughout hospital stays.
+                  </p>
+                </div>
+                <div class="team-specialties-wrap">
+                  <div class="team-specialties-label">Focus Specialties:</div>
+                  <div class="team-tags-list">
+                    <span class="team-tag">Infection Control</span>
+                    <span class="team-tag">Maternal & Ward Care</span>
+                    <span class="team-tag">Patient Advocacy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-card-bottom">
+              <div class="team-schedule-info">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Daily &bull; 24-Hour Nursing Supervision</span>
+              </div>
+              <a href="contact.html" class="team-consult-btn" id="btn-consult-apio">
+                <span>Inquire with Nursing</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facility Spaces Gallery -->
+    <section class="section-gallery" id="facility-spaces">
       <div class="container section-heading">
         <h2>Explore our spaces</h2>
         <p>These images highlight the welcoming and modern spaces where patients receive care.</p>
       </div>
       <div class="container gallery-grid">
         <article class="gallery-item">
-          <img src="national-cancer-institute-w7Pby5bDKW4-unsplash.jpg" alt="Hospital entrance">
+          <img src="national-cancer-institute-w7Pby5bDKW4-unsplash.jpg" alt="Hospital entrance" referrerpolicy="no-referrer">
           <div class="overlay">Main entrance and reception area.</div>
         </article>
         <article class="gallery-item">
-          <img src="anonymous.jpg" alt="Clinical team">
+          <img src="anonymous.jpg" alt="Clinical team" referrerpolicy="no-referrer">
           <div class="overlay">Clinical team working together.</div>
         </article>
         <article class="gallery-item">
-          <img src="shutterstock-336436628.jpg" alt="Patient ward">
+          <img src="shutterstock-336436628.jpg" alt="Patient ward" referrerpolicy="no-referrer">
           <div class="overlay">Patient ward with modern care amenities.</div>
         </article>
         <article class="gallery-item">
-          <img src="OIP.jpeg" alt="Medical consultation">
+          <img src="OIP.jpeg" alt="Medical consultation" referrerpolicy="no-referrer">
           <div class="overlay">Consultation and examination room.</div>
         </article>
         <article class="gallery-item">
-          <img src="OIP (1).jpeg" alt="Diagnostics">
+          <img src="OIP (1).jpeg" alt="Diagnostics" referrerpolicy="no-referrer">
           <div class="overlay">Diagnostic imaging and laboratory services.</div>
         </article>
         <article class="gallery-item">
-          <img src="OIP (2).jpeg" alt="Patient support">
+          <img src="OIP (2).jpeg" alt="Patient support" referrerpolicy="no-referrer">
           <div class="overlay">Supportive care and patient comfort.</div>
         </article>
       </div>
