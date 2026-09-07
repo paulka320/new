@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --surface: #ffffff;
   --background: #f7f9fc;
   --text: #1f2937;
@@ -687,6 +687,210 @@ button,
   .values-grid {
     grid-template-columns: 1fr;
   }
+
+  .appointment-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-wrapper {
+    padding: 2rem 1.25rem;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .appointment-form .btn-primary {
+    justify-content: center;
+  }
+}
+
+/* Appointment Scheduling Section */
+.section-appointment {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, rgba(247, 249, 252, 0.4) 0%, rgba(248, 244, 239, 0.6) 100%);
+  position: relative;
+}
+
+.appointment-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(1, 58, 107, 0.08);
+  padding: 3rem 2.5rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.appointment-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.appointment-header .eyebrow {
+  display: inline-block;
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
+}
+
+.appointment-header h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--primary);
+  margin-bottom: 0.65rem;
+}
+
+.appointment-header p {
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appointment-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-group label .required {
+  color: #e11d48;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 1.1rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 0.95rem 1rem 0.95rem 2.75rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  appearance: none;
+}
+
+.input-wrapper select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23556173' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+  padding-right: 2.5rem;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(1, 58, 107, 0.12);
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.form-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.form-note i {
+  color: var(--secondary);
+}
+
+.appointment-form .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.75rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appointment-form .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.appointment-feedback {
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+.appointment-feedback.success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.appointment-feedback.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 760px) {

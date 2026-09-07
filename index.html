@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -71,7 +71,8 @@
         <h1>Compassionate care for every patient.</h1>
         <p>We deliver accessible, high-quality medical services with dignity and expertise to support our community.</p>
         <div class="hero-actions">
-          <a href="services.html" class="btn btn-primary">Explore services</a>
+          <a href="#appointment-section" class="btn btn-primary"><i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>Book appointment</a>
+          <a href="services.html" class="btn btn-secondary">Explore services</a>
           <a href="contact.html" class="btn btn-secondary">Contact us</a>
         </div>
       </div>
@@ -115,6 +116,76 @@
           <h3>Wellness checks</h3>
           <p>Routine health screenings and preventive care to promote long-term wellbeing.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- Appointment Scheduling Form Section -->
+    <section id="appointment-section" class="section-appointment">
+      <div class="container">
+        <div class="appointment-wrapper">
+          <div class="appointment-header">
+            <span class="eyebrow">Quick & Easy</span>
+            <h2>Book an Appointment</h2>
+            <p>Fill out the simple form below with your name, phone number, and preferred department. Your request will be instantly delivered to our team via email.</p>
+          </div>
+
+          <!-- Form submission endpoint targets the system email stanthonydoctorsavenue@gmail.com -->
+          <form id="appointment-form" action="https://formsubmit.co/stanthonydoctorsavenue@gmail.com" method="POST" data-email="stanthonydoctorsavenue@gmail.com" class="appointment-form">
+            <!-- Form configuration -->
+            <input type="hidden" name="_subject" value="New Appointment Booking - St. Anthony Doctors' Avenue">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patient-name">Patient Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-user input-icon"></i>
+                  <input type="text" id="patient-name" name="patient_name" placeholder="e.g. Sarah Akello" required autocomplete="name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone-number">Phone Number <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-phone input-icon"></i>
+                  <input type="tel" id="phone-number" name="phone_number" placeholder="e.g. +256 777 535 149" required autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="preferred-department">Preferred Department <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-hospital-user input-icon"></i>
+                  <select id="preferred-department" name="preferred_department" required>
+                    <option value="" disabled selected>Select department...</option>
+                    <option value="Emergency care">Emergency Care (24/7)</option>
+                    <option value="Pediatrics">Pediatrics (Child Health)</option>
+                    <option value="Surgery">General Surgery</option>
+                    <option value="Diagnostics">Diagnostics & Laboratory</option>
+                    <option value="Dental care">Dental Care</option>
+                    <option value="Maternity care">Maternity & Antenatal</option>
+                    <option value="Rehabilitation">Rehabilitation & Therapy</option>
+                    <option value="Wellness checks">Wellness Checks & Screening</option>
+                    <option value="General Consultation">General Medical Consultation</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <p class="form-note">
+                <i class="fas fa-envelope-open-text"></i> Requests are submitted and received at <strong>stanthonydoctorsavenue@gmail.com</strong>.
+              </p>
+              <button type="submit" id="appointment-submit-btn" class="btn btn-primary">
+                <span>Book Appointment</span>
+                <i class="fas fa-arrow-right" style="margin-left: 0.4rem;"></i>
+              </button>
+            </div>
+
+            <div id="appointment-feedback" class="appointment-feedback" style="display: none;" role="alert"></div>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -218,7 +289,7 @@
         </a>
         <p>Delivering trusted healthcare solutions with professionalism and compassion.</p>
         <div class="social-icons">
-          <a href="https://wa.me/256773069752" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/256777535149" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp"></i></a>
           <a href="https://www.facebook.com/Ebelu Micheal" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.youtube.com/yourpage" target="_blank" rel="noreferrer"><i class="fab fa-youtube"></i></a>
         </div>
@@ -244,7 +315,7 @@
       <div>
         <h4>Contact</h4>
         <p>Email: stanthonydoctorsavenue@gmail.com</p>
-        <p>Phone: +256 773 069 752</p>
+        <p>Phone: <a href="tel:+256777535149">+256 777 535 149</a> / <a href="tel:+256791673454">+256 791 673 454</a></p>
         <p>Madera, Soroti City</p>
       </div>
     </div>
