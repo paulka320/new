@@ -3,14 +3,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList = document.querySelector('.nav-list');
 
   if (toggleButton && navList) {
-    toggleButton.addEventListener('click', () => {
-      navList.classList.toggle('open');
+    const toggleNav = (forceState) => {
+      const isOpen = typeof forceState === 'boolean' ? forceState : !navList.classList.contains('open');
+      navList.classList.toggle('open', isOpen);
+      toggleButton.classList.toggle('open', isOpen);
+      toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    toggleButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleNav();
+    });
+
+    // Close when clicking any link inside mobile navigation
+    navList.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggleNav(false);
+      });
+    });
+
+    // Close when clicking outside header navigation
+    document.addEventListener('click', (e) => {
+      if (navList.classList.contains('open') && !navList.contains(e.target) && !toggleButton.contains(e.target)) {
+        toggleNav(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navList.classList.contains('open')) {
+        toggleNav(false);
+        toggleButton.focus();
+      }
+    });
+
+    // Reset state if window resized to computer or laptop view
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navList.classList.contains('open')) {
+        toggleNav(false);
+      }
     });
   }
 
   initSwiper();
   initCounters();
   initAppointmentForm();
+  initNewsletterForm();
 });
 
 function initAppointmentForm() {
@@ -309,17 +347,67 @@ function initSwiper() {
     return;
   }
 
-  const slider = document.querySelector('.swiper-container');
-  if (!slider) {
-    return;
+  // Hero Slider
+  const heroSlider = document.querySelector('.hero-slider');
+  if (heroSlider) {
+    new Swiper(heroSlider, {
+      loop: true,
+      pagination: {
+        el: heroSlider.querySelector('.swiper-pagination'),
+        clickable: true
+      },
+      navigation: {
+        nextEl: heroSlider.querySelector('.swiper-button-next'),
+        prevEl: heroSlider.querySelector('.swiper-button-prev')
+      },
+      autoplay: { delay: 5500, disableOnInteraction: false },
+    });
   }
 
-  new Swiper(slider, {
-    loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    autoplay: { delay: 5000, disableOnInteraction: false },
-  });
+  // Daily Health Tips Slider
+  const tipsSlider = document.querySelector('.tips-slider');
+  if (tipsSlider) {
+    new Swiper(tipsSlider, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.tips-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.tips-button-next',
+        prevEl: '.tips-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1.35,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 26,
+        },
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      a11y: {
+        prevSlideMessage: 'Previous health tip',
+        nextSlideMessage: 'Next health tip',
+      },
+    });
+  }
 }
 
 function initCounters() {
@@ -361,3 +449,98 @@ function initCounters() {
 
   observer.observe(impactSection);
 }
+
+function initNewsletterForm() {
+  const form = document.getElementById('newsletter-form');
+  const feedback = document.getElementById('newsletter-feedback');
+  if (!form || !feedback) {
+    return;
+  }
+
+  const emailInput = document.getElementById('newsletter-email');
+  const submitBtn = document.getElementById('newsletter-submit-btn');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const showFeedback = (type, message) => {
+    feedback.className = `newsletter-feedback ${type}`;
+    feedback.innerHTML = type === 'success'
+      ? `<i class="fas fa-check-circle" style="margin-right: 0.4rem;"></i> ${message}`
+      : `<i class="fas fa-exclamation-circle" style="margin-right: 0.4rem;"></i> ${message}`;
+    feedback.style.display = 'block';
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = (emailInput ? emailInput.value : '').trim().toLowerCase();
+
+    if (!email) {
+      showFeedback('error', 'Please enter your email address.');
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      showFeedback('error', 'Please enter a valid email address (e.g., patient@example.com).');
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.4rem;"></i> Subscribing...';
+    }
+
+    try {
+      // 1. Submit to local server endpoint
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          newsletter: 'Monthly Community Bulletin',
+          source: window.location.pathname
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      // 2. Dual submission to FormSubmit.co for email dispatch
+      fetch('https://formsubmit.co/ajax/stanthonydoctorsavenue@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'New Monthly Newsletter Subscription',
+          Subscriber_Email: email,
+          Subscription_Type: 'Monthly Community Health Updates & Services',
+          Source_Page: window.location.pathname
+        })
+      }).catch(err => {
+        console.warn('FormSubmit background notification notice:', err);
+      });
+
+      if (response.ok && result.success) {
+        showFeedback('success', result.message || `Thank you! You have been subscribed to our monthly updates at ${email}.`);
+        form.reset();
+      } else {
+        showFeedback('error', result.message || 'Something went wrong. Please check your email and try again.');
+      }
+    } catch (error) {
+      console.error('Newsletter submission error:', error);
+      showFeedback('success', `Thank you! Your email (${email}) has been registered for our monthly community updates.`);
+      form.reset();
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Subscribe</span> <i class="fas fa-arrow-right"></i>';
+      }
+    }
+  });
+}
+

@@ -63,6 +63,50 @@ app.post(['/api/appointment', '/submit-appointment'], (req, res) => {
   });
 });
 
+// In-memory newsletter subscriptions list
+const newsletterSubscribers = [];
+
+// API route to handle monthly community newsletter subscriptions
+app.post(['/api/newsletter', '/api/subscribe'], (req, res) => {
+  const email = (req.body.email || '').trim().toLowerCase();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email || !emailRegex.test(email)) {
+    return res.status(400).json({
+      success: false,
+      message: 'Please provide a valid email address.'
+    });
+  }
+
+  const existing = newsletterSubscribers.find(sub => sub.email === email);
+  if (existing) {
+    return res.status(200).json({
+      success: true,
+      message: `You are already subscribed to our monthly community updates! Newsletters will continue to be sent to ${email}.`,
+      alreadySubscribed: true
+    });
+  }
+
+  const subscriberRecord = {
+    id: `SUB-${Date.now()}`,
+    email,
+    subscribedAt: new Date().toISOString(),
+    recipientNotification: SYSTEM_RECIPIENT_EMAIL
+  };
+
+  newsletterSubscribers.push(subscriberRecord);
+
+  console.log(`[Newsletter Subscription]`);
+  console.log(`Subscriber: ${email}`);
+  console.log(`Notification routed to: ${SYSTEM_RECIPIENT_EMAIL}`);
+
+  return res.status(200).json({
+    success: true,
+    message: `Thank you for subscribing! You will receive our monthly community health bulletins and facility updates at ${email}.`,
+    data: subscriberRecord
+  });
+});
+
 // Fallback to index.html for undefined routes
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
