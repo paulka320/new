@@ -19,6 +19,141 @@ function initAppointmentForm() {
   if (!form || !feedback) return;
 
   const submitBtn = document.getElementById('appointment-submit-btn');
+  const phoneInput = document.getElementById('phone-number');
+  const phoneFeedback = document.getElementById('phone-feedback');
+  const phoneStatusIcon = document.getElementById('phone-status-icon');
+
+  let phoneTouched = false;
+
+  // Phone number standard format validator
+  function validatePhoneNumber(value) {
+    const raw = (value || '').trim();
+    if (!raw) {
+      return {
+        isValid: false,
+        message: 'Phone number is required.'
+      };
+    }
+
+    // Must only contain allowed telephone characters: digits, spaces, dashes, parens, optional leading +
+    const allowedCharsRegex = /^\+?[0-9\s\-()]+$/;
+    if (!allowedCharsRegex.test(raw)) {
+      return {
+        isValid: false,
+        message: 'Only digits, spaces, hyphens, and optional leading + are allowed.'
+      };
+    }
+
+    // Extract raw numeric digits
+    const digits = raw.replace(/\D/g, '');
+
+    if (digits.length < 9) {
+      return {
+        isValid: false,
+        message: `Too short (${digits.length} digits). Standard numbers have at least 9 digits.`
+      };
+    }
+
+    if (digits.length > 15) {
+      return {
+        isValid: false,
+        message: `Too long (${digits.length} digits). Standard phone format allows up to 15 digits.`
+      };
+    }
+
+    // Standard Uganda phone patterns (+256 or local 07...)
+    if (raw.startsWith('+256') || raw.startsWith('256')) {
+      if (digits.length !== 12) {
+        return {
+          isValid: false,
+          message: 'Uganda format requires 9 digits after +256 (e.g. +256 777 535 149).'
+        };
+      }
+    } else if (raw.startsWith('0')) {
+      if (digits.length !== 10) {
+        return {
+          isValid: false,
+          message: 'Local format requires 10 digits starting with 0 (e.g. 0777 535 149).'
+        };
+      }
+    }
+
+    return {
+      isValid: true,
+      message: 'Standard phone format valid'
+    };
+  }
+
+  // Update real-time visual feedback for phone input
+  function updatePhoneValidationUI() {
+    if (!phoneInput) return false;
+
+    const value = phoneInput.value;
+    const isBlank = !value.trim();
+
+    if (isBlank) {
+      if (phoneTouched) {
+        phoneInput.classList.add('is-invalid');
+        phoneInput.classList.remove('is-valid');
+        phoneInput.setAttribute('aria-invalid', 'true');
+        if (phoneStatusIcon) {
+          phoneStatusIcon.innerHTML = '<i class="fas fa-exclamation-circle" style="color: #ef4444;"></i>';
+        }
+        if (phoneFeedback) {
+          phoneFeedback.className = 'input-feedback invalid-msg';
+          phoneFeedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Phone number is required.';
+        }
+        return false;
+      } else {
+        phoneInput.classList.remove('is-invalid', 'is-valid');
+        phoneInput.setAttribute('aria-invalid', 'false');
+        if (phoneStatusIcon) phoneStatusIcon.innerHTML = '';
+        if (phoneFeedback) phoneFeedback.innerHTML = '';
+        return false;
+      }
+    }
+
+    const result = validatePhoneNumber(value);
+
+    if (result.isValid) {
+      phoneInput.classList.remove('is-invalid');
+      phoneInput.classList.add('is-valid');
+      phoneInput.setAttribute('aria-invalid', 'false');
+      if (phoneStatusIcon) {
+        phoneStatusIcon.innerHTML = '<i class="fas fa-check-circle" style="color: #10b981;"></i>';
+      }
+      if (phoneFeedback) {
+        phoneFeedback.className = 'input-feedback valid-msg';
+        phoneFeedback.innerHTML = `<i class="fas fa-check"></i> ${result.message}`;
+      }
+      return true;
+    } else {
+      phoneInput.classList.add('is-invalid');
+      phoneInput.classList.remove('is-valid');
+      phoneInput.setAttribute('aria-invalid', 'true');
+      if (phoneStatusIcon) {
+        phoneStatusIcon.innerHTML = '<i class="fas fa-times-circle" style="color: #ef4444;"></i>';
+      }
+      if (phoneFeedback) {
+        phoneFeedback.className = 'input-feedback invalid-msg';
+        phoneFeedback.innerHTML = `<i class="fas fa-circle-exclamation"></i> ${result.message}`;
+      }
+      return false;
+    }
+  }
+
+  // Attach real-time validation listeners to the phone number field
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      phoneTouched = true;
+      updatePhoneValidationUI();
+    });
+
+    phoneInput.addEventListener('blur', () => {
+      phoneTouched = true;
+      updatePhoneValidationUI();
+    });
+  }
 
   // Check URL params for success state on load
   const urlParams = new URLSearchParams(window.location.search);
@@ -40,8 +175,10 @@ function initAppointmentForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    phoneTouched = true;
+    const isPhoneValid = updatePhoneValidationUI();
+
     const nameInput = document.getElementById('patient-name');
-    const phoneInput = document.getElementById('phone-number');
     const deptSelect = document.getElementById('preferred-department');
 
     const patientName = nameInput ? nameInput.value.trim() : '';
@@ -53,6 +190,18 @@ function initAppointmentForm() {
         `<div style="display: flex; align-items: center; gap: 0.5rem;">
           <i class="fas fa-exclamation-circle" style="color: #dc2626;"></i>
           <span>Please fill out all required fields: patient name, phone number, and preferred department.</span>
+        </div>`,
+        'error'
+      );
+      return;
+    }
+
+    if (!isPhoneValid) {
+      if (phoneInput) phoneInput.focus();
+      showFeedback(
+        `<div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-exclamation-circle" style="color: #dc2626;"></i>
+          <span>Please provide a valid standard phone number before booking.</span>
         </div>`,
         'error'
       );
@@ -84,7 +233,7 @@ function initAppointmentForm() {
 
       // 2. Dispatch via FormSubmit endpoint to send email to stanthonydoctorsavenue@gmail.com
       const formData = new FormData(form);
-      const formSubmitRequest = fetch('https://formsubmit.co/ajax/stanthonydoctorsavenue@gmail.com', {
+      fetch('https://formsubmit.co/ajax/stanthonydoctorsavenue@gmail.com', {
         method: 'POST',
         headers: {
           'Accept': 'application/json'
@@ -111,6 +260,10 @@ function initAppointmentForm() {
       );
 
       form.reset();
+      phoneTouched = false;
+      if (phoneInput) phoneInput.classList.remove('is-valid', 'is-invalid');
+      if (phoneStatusIcon) phoneStatusIcon.innerHTML = '';
+      if (phoneFeedback) phoneFeedback.innerHTML = '';
     } catch (error) {
       console.error('Submission error:', error);
       showFeedback(
@@ -124,6 +277,10 @@ function initAppointmentForm() {
         'success'
       );
       form.reset();
+      phoneTouched = false;
+      if (phoneInput) phoneInput.classList.remove('is-valid', 'is-invalid');
+      if (phoneStatusIcon) phoneStatusIcon.innerHTML = '';
+      if (phoneFeedback) phoneFeedback.innerHTML = '';
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

@@ -799,7 +799,7 @@ button,
 .input-wrapper input,
 .input-wrapper select {
   width: 100%;
-  padding: 0.95rem 1rem 0.95rem 2.75rem;
+  padding: 0.95rem 2.5rem 0.95rem 2.75rem;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: var(--accent);
@@ -807,6 +807,53 @@ button,
   font-size: 0.95rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   appearance: none;
+}
+
+.input-wrapper .status-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.input-wrapper input.is-invalid {
+  border-color: #ef4444 !important;
+  background-color: #fffbfa !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.input-wrapper input.is-valid {
+  border-color: #10b981 !important;
+  background-color: #f0fdf4 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+.input-feedback {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  min-height: 1.15rem;
+  margin-top: 0.2rem;
+}
+
+.input-feedback.invalid-msg {
+  color: #dc2626;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.input-feedback.valid-msg {
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .input-wrapper select {
