@@ -1,0 +1,8 @@
+{
+  "name": "St. Anthony Doctors' Avenue",
+  "description": "Healthcare facility website for St. Anthony Doctors' Avenue in Soroti, Uganda providing comprehensive medical services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
