@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | St. Anthony Doctors' Avenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +17,7 @@
         <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
         <div class="brand-text">
           <span class="company-name">St. Anthony Doctors' Avenue</span>
-          <span class="tagline">Your life matters.</span>
+          <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
         </div>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation"><span></span></button>
@@ -22,8 +25,9 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="directorates.html">Departments</a></li>
+          <li><a href="departments.html">Departments</a></li>
           <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -31,18 +35,24 @@
   </header>
 
   <main>
-    <section class="page-hero container" id="gallery-hero">
-      <h1>Hospital gallery & medical team</h1>
-      <p>Discover our clinical spaces and meet the dedicated medical professionals safeguarding your health in Soroti.</p>
+    <section class="page-hero" id="gallery-hero">
+      <div class="container page-hero-container">
+        <h1>Healthcare in Action</h1>
+        <div class="page-hero-text">
+          <p class="lead-paragraph">At St. Anthony Doctors’ Avenue, every picture reflects our dedication to healing, compassion and clinical excellence.</p>
+          <p>From advanced medical care and laboratory diagnostics to community health outreach, explore how we serve patients and families in Soroti and Eastern Uganda.</p>
+        </div>
+        <div class="quote-highlight-banner">“Compassion in Motion. Excellence in Practice”</div>
+      </div>
     </section>
 
-    <!-- NEW: Meet Our Team Section -->
+    <!-- Meet Our Team Section -->
     <section class="section-team" id="meet-our-team" aria-labelledby="team-heading">
       <div class="container">
         <div class="section-heading">
-          <span class="team-badge-pill"><i class="fas fa-user-md" aria-hidden="true"></i> Compassionate Clinical Leaders</span>
           <h2 id="team-heading">Meet Our Team</h2>
-          <p>Our multidisciplinary team of licensed physicians, surgeons, pediatric specialists, and nursing directors combines decades of clinical experience with deep compassion for the Soroti community.</p>
+          <p>Our dedicated team of healthcare professionals brings together clinical expertise, empathy and a commitment to patient well-being. From doctors and nurses to laboratory scientists and support staff, we work collaboratively to deliver trusted, compassionate care.</p>
+          <div class="quote-highlight-banner">“Expert Hands. Caring Hearts. Dedicated to You”</div>
         </div>
 
         <!-- Trust Credentials Strip -->
@@ -88,32 +98,29 @@
           </div>
         </div>
 
-        <!-- Medical Staff Grid -->
+        <!-- Medical Staff Grid: Names and Photos removed awaiting recruitment, titles and descriptions retained -->
         <div class="team-grid" id="team-grid">
-          <!-- Doctor 1: Dr. Micheal Ebelu -->
-          <article class="team-card" id="team-card-ebelu">
+          <!-- Specialist Box 1: Surgery -->
+          <article class="team-card" id="team-card-surgery">
             <div class="team-card-top">
               <div class="team-photo-wrap">
-                <img 
-                  src="src/assets/images/doctor_michael_1788803234896.jpg" 
-                  alt="Dr. Micheal Ebelu, Chief Medical Officer & Senior Consultant Surgeon"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                >
-                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+                <div class="team-photo-placeholder" aria-label="Specialist position open for recruitment">
+                  <i class="fas fa-user-doctor" aria-hidden="true"></i>
+                  <span>Awaiting Recruitment</span>
+                </div>
               </div>
               <div class="team-card-info">
                 <div>
                   <div class="team-header-group">
-                    <h3 class="team-name-title">Dr. Micheal Ebelu</h3>
+                    <h3 class="team-name-title">Chief Medical Officer & Senior Consultant Surgeon</h3>
                     <span class="team-credentials">MBChB, MMed (Surgery), FCS (ECSA)</span>
                   </div>
                   <div class="team-designation">
                     <i class="fas fa-stethoscope" aria-hidden="true"></i>
-                    <span>Chief Medical Officer & Senior Consultant Surgeon</span>
+                    <span>Department of Surgery & Clinical Governance</span>
                   </div>
                   <p class="team-bio">
-                    With over 18 years of clinical and operative experience across Uganda's referral healthcare systems, Dr. Ebelu leads clinical operations and surgical governance at St. Anthony Doctors' Avenue. He specializes in major abdominal interventions, acute trauma management, and minimally invasive laparoscopic surgery.
+                    Oversees clinical operations, surgical safety governance, and operative interventions at St. Anthony Doctors' Avenue. Focuses on major abdominal operations, emergency trauma management, and minimally invasive procedures with a dedicated theatre team.
                   </p>
                 </div>
                 <div class="team-specialties-wrap">
@@ -131,29 +138,26 @@
                 <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span>Mon – Sat &bull; 24/7 Emergency On-Call</span>
               </div>
-              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-ebelu">
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-surgery">
                 <span>Book Consultation</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </article>
 
-          <!-- Doctor 2: Dr. Grace Akello -->
-          <article class="team-card" id="team-card-akello">
+          <!-- Specialist Box 2: Pediatrics -->
+          <article class="team-card" id="team-card-pediatrics">
             <div class="team-card-top">
               <div class="team-photo-wrap">
-                <img 
-                  src="src/assets/images/doctor_grace_1788803250000.jpg" 
-                  alt="Dr. Grace Akello, Lead Consultant Pediatrician"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                >
-                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+                <div class="team-photo-placeholder" aria-label="Specialist position open for recruitment">
+                  <i class="fas fa-user-doctor" aria-hidden="true"></i>
+                  <span>Awaiting Recruitment</span>
+                </div>
               </div>
               <div class="team-card-info">
                 <div>
                   <div class="team-header-group">
-                    <h3 class="team-name-title">Dr. Grace Akello</h3>
+                    <h3 class="team-name-title">Lead Consultant Pediatrician</h3>
                     <span class="team-credentials">MBChB, MMed (Pediatrics & Child Health)</span>
                   </div>
                   <div class="team-designation">
@@ -161,7 +165,7 @@
                     <span>Head of Pediatrics & Neonatal Care</span>
                   </div>
                   <p class="team-bio">
-                    Dr. Akello brings 14 years of specialized pediatric care, newborn resuscitation, and family health guidance. Known for her comforting, patient-centered approach with young children and mothers, she leads our specialized pediatric ward, child nutrition clinic, and immunization monitoring programs.
+                    Dedicated to comprehensive pediatric care, neonatal resuscitation, and family health guidance. Provides patient-centered care for young children and mothers, leading our child ward, nutrition clinics, and routine immunization monitoring.
                   </p>
                 </div>
                 <div class="team-specialties-wrap">
@@ -179,29 +183,26 @@
                 <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span>Daily &bull; 24-Hour Pediatric Ward Coverage</span>
               </div>
-              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-akello">
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-pediatrics">
                 <span>Book Pediatric Care</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </article>
 
-          <!-- Doctor 3: Dr. Patrick Ochen -->
-          <article class="team-card" id="team-card-ochen">
+          <!-- Specialist Box 3: Internal Medicine -->
+          <article class="team-card" id="team-card-medicine">
             <div class="team-card-top">
               <div class="team-photo-wrap">
-                <img 
-                  src="src/assets/images/doctor_patrick_1788803263571.jpg" 
-                  alt="Dr. Patrick Ochen, Head of Internal Medicine"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                >
-                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+                <div class="team-photo-placeholder" aria-label="Specialist position open for recruitment">
+                  <i class="fas fa-user-doctor" aria-hidden="true"></i>
+                  <span>Awaiting Recruitment</span>
+                </div>
               </div>
               <div class="team-card-info">
                 <div>
                   <div class="team-header-group">
-                    <h3 class="team-name-title">Dr. Patrick Ochen</h3>
+                    <h3 class="team-name-title">Senior Physician & Internal Medicine Specialist</h3>
                     <span class="team-credentials">MBChB, MMed (Internal Medicine), MSc</span>
                   </div>
                   <div class="team-designation">
@@ -209,7 +210,7 @@
                     <span>Senior Physician & Head of Internal Medicine</span>
                   </div>
                   <p class="team-bio">
-                    Specializing in complex adult diagnostics and long-term metabolic health, Dr. Ochen designs personalized disease management plans for hypertension, heart disease, diabetes, and acute infections. He leads evidence-based clinical audits to ensure superior recovery outcomes.
+                    Specializing in adult diagnostics, chronic condition management, and long-term metabolic health. Formulates tailored management plans for hypertension, cardiac concerns, diabetes, and acute infections with evidence-based protocols.
                   </p>
                 </div>
                 <div class="team-specialties-wrap">
@@ -227,29 +228,26 @@
                 <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span>Mon – Fri &bull; 8:00 AM – 6:00 PM</span>
               </div>
-              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-ochen">
+              <a href="index.html#appointment-booking" class="team-consult-btn" id="btn-consult-medicine">
                 <span>Book Medical Visit</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </article>
 
-          <!-- Staff 4: Sister Mary Apio -->
-          <article class="team-card" id="team-card-apio">
+          <!-- Specialist Box 4: Nursing Directorate -->
+          <article class="team-card" id="team-card-nursing">
             <div class="team-card-top">
               <div class="team-photo-wrap">
-                <img 
-                  src="src/assets/images/nurse_mary_1788803276059.jpg" 
-                  alt="Sister Mary Apio, Director of Nursing Services"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                >
-                <span class="team-verified-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Verified Specialist</span>
+                <div class="team-photo-placeholder" aria-label="Specialist position open for recruitment">
+                  <i class="fas fa-user-nurse" aria-hidden="true"></i>
+                  <span>Awaiting Recruitment</span>
+                </div>
               </div>
               <div class="team-card-info">
                 <div>
                   <div class="team-header-group">
-                    <h3 class="team-name-title">Sister Mary Apio</h3>
+                    <h3 class="team-name-title">Director of Nursing Services & Patient Safety</h3>
                     <span class="team-credentials">BSN, RN, Dip. Midwifery & Healthcare Mgt</span>
                   </div>
                   <div class="team-designation">
@@ -257,7 +255,7 @@
                     <span>Director of Nursing & Patient Safety Lead</span>
                   </div>
                   <p class="team-bio">
-                    Sister Mary coordinates our nursing units and inpatient ward operations with an unwavering focus on sterile safety, maternal dignity, and empathetic bedside care. She oversees 24-hour triage, post-operative monitoring, and patient comfort advocacy throughout hospital stays.
+                    Coordinates our 40+ member nursing team and inpatient ward operations with an unwavering focus on sterile safety, maternal dignity, and empathetic bedside care. Oversees 24-hour triage, post-operative monitoring, and patient comfort.
                   </p>
                 </div>
                 <div class="team-specialties-wrap">
@@ -275,7 +273,7 @@
                 <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span>Daily &bull; 24-Hour Nursing Supervision</span>
               </div>
-              <a href="contact.html" class="team-consult-btn" id="btn-consult-apio">
+              <a href="contact.html" class="team-consult-btn" id="btn-consult-nursing">
                 <span>Inquire with Nursing</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
@@ -285,11 +283,12 @@
       </div>
     </section>
 
-    <!-- Facility Spaces Gallery -->
+    <!-- Facility Spaces Gallery: Medical Facilities & Technology -->
     <section class="section-gallery" id="facility-spaces">
       <div class="container section-heading">
-        <h2>Explore our spaces</h2>
-        <p>These images highlight the welcoming and modern spaces where patients receive care.</p>
+        <h2>Medical Facilities & Technology</h2>
+        <p>Explore our modern medical facility, designed for patient safety, clinical precision and comfort. Equipped with advanced diagnostic tools, well maintained patient wards, consultation rooms and emergency care resources, we ensure reliable, high quality healthcare delivery.</p>
+        <div class="quote-highlight-banner">“Modern Technology. Safe Environment. Better Care”</div>
       </div>
       <div class="container gallery-grid">
         <article class="gallery-item">
@@ -318,6 +317,29 @@
         </article>
       </div>
     </section>
+
+    <!-- Community Health Outreach -->
+    <section class="section-block" id="community-outreach-gallery">
+      <div class="container section-heading">
+        <h2>Community Health Outreach</h2>
+        <p>We believe healthcare extends beyond the hospital walls. Our community outreach initiatives provide free screenings, health education and preventive care to promote wellness and build healthier, informed communities across Eastern Uganda.</p>
+        <div class="quote-highlight-banner">“Reaching Communities. Promoting Wellness. Saving Lives”</div>
+      </div>
+      <div class="container overview-grid">
+        <article class="info-card">
+          <h3>Free Health Screenings</h3>
+          <p>Routine blood pressure checks, blood sugar monitoring, and preliminary wellness screenings for rural families.</p>
+        </article>
+        <article class="info-card">
+          <h3>Community Health Education</h3>
+          <p>Workshops on hygiene, maternal nutrition, and prevention of communicable diseases conducted in local languages.</p>
+        </article>
+        <article class="info-card">
+          <h3>Preventive Care & Immunization</h3>
+          <p>Expanding essential childhood immunizations and maternal health checkups directly to underserved communities.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -325,7 +347,6 @@
       <!-- Monthly Community Newsletter Subscription -->
       <div class="footer-newsletter">
         <div class="footer-newsletter-copy">
-          <span class="newsletter-badge"><i class="fas fa-paper-plane"></i> Monthly Community Newsletter</span>
           <h3>Stay updated on health campaigns & facility services</h3>
           <p>Subscribe to receive monthly medical advice, outreach schedules, and new healthcare options in Soroti.</p>
         </div>
@@ -357,7 +378,7 @@
             <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
             <div class="brand-text">
               <span class="company-name">St. Anthony Doctors' Avenue</span>
-              <span class="tagline">Patient-centered care for Soroti.</span>
+              <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
             </div>
           </a>
           <p>Delivering trusted healthcare solutions with professionalism and compassion.</p>
@@ -371,10 +392,10 @@
           <h4>Explore</h4>
           <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about.html">About</a>
+            <a href="departments.html">Departments</a>
             <a href="gallery.html">Gallery</a>
-            <a href="directorates.html">Departments</a>
+            <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>

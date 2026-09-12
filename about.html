@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | St. Anthony Doctors' Avenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +17,7 @@
         <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
         <div class="brand-text">
           <span class="company-name">St. Anthony Doctors' Avenue</span>
-          <span class="tagline">Your life matters.</span>
+          <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
         </div>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation"><span></span></button>
@@ -22,8 +25,9 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="departments.html">Departments</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -31,64 +35,130 @@
   </header>
 
   <main>
-    <section class="page-hero container">
-      <h1>About St. Anthony Doctors' Avenue</h1>
-      <p>We combine modern medicine with compassionate care to support the health and wellbeing of every family we serve.</p>
-    </section>
-
-    <section class="section-block">
-      <div class="container section-heading">
-        <h2>Our commitment</h2>
-        <p>We provide quality, affordable healthcare across clinical specialties, delivered by professionals who treat every patient with respect and dignity.</p>
-      </div>
-      <div class="container overview-grid">
-        <article class="info-card">
-          <h3>Patient-centered care</h3>
-          <p>Every treatment plan is designed around patient needs, comfort, and long-term recovery.</p>
-        </article>
-        <article class="info-card">
-          <h3>Community focus</h3>
-          <p>We support our community through outreach, preventive services, and education.</p>
-        </article>
+    <section class="page-hero" id="about-hero">
+      <div class="container page-hero-container about-hero-container">
+        <h1>About St. Anthony Doctors' Avenue</h1>
+        <div class="page-hero-text about-hero-text">
+          <p class="lead-paragraph">St. Anthony Doctors’ Avenue is a modern, patient-centered healthcare institution established in Soroti City, Eastern Uganda, dedicated to delivering safe, affordable and high quality healthcare.</p>
+          <p>We bring together clinical expertise, compassionate care, modern technology, innovation and evidence based practice to provide an exceptional patient experience and better health outcomes.</p>
+          <p>Our ambition is to become a trusted Centre of healthcare excellence in Eastern Uganda and beyond, while contributing to stronger communities through accessible care, professional development, research and strategic partnerships.</p>
+        </div>
+        <div class="quote-highlight-banner">“Where Expertise Meets Compassion For Healthier Lives”</div>
       </div>
     </section>
 
-    <section class="section-feature">
+    <section class="section-block" id="commitment-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our commitment</h2>
+          <p>We are committed to delivering safe, compassionate, affordable and excellent healthcare, putting every patient first while embracing innovation, integrity, technology and teamwork to achieve better health outcomes.</p>
+          <div class="quote-highlight-banner">“Your Health. Our Expertise. Our Commitment”</div>
+        </div>
+        <div class="commitment-grid">
+          <article class="commitment-card">
+            <div class="commitment-num">01</div>
+            <h3>Safe & Evidence-Based Care</h3>
+            <p>Adhering strictly to clinical guidelines, rigorous sterilization, and thorough oversight across every diagnosis and treatment.</p>
+          </article>
+          <article class="commitment-card">
+            <div class="commitment-num">02</div>
+            <h3>Compassionate Patient Experience</h3>
+            <p>Treating every patient and family with empathy, dignity, active listening, and dedicated bedside comfort at all hours.</p>
+          </article>
+          <article class="commitment-card">
+            <div class="commitment-num">03</div>
+            <h3>Modern Diagnostics & Technology</h3>
+            <p>Equipped with computerized laboratory analyzers, digital ultrasound, and streamlined records for precise medical assessments.</p>
+          </article>
+          <article class="commitment-card">
+            <div class="commitment-num">04</div>
+            <h3>Accessible & Affordable Care</h3>
+            <p>Maintaining honest, transparent rates while organizing active village health outreaches and preventative maternal screenings.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-feature" id="vision-values-section">
       <div class="container section-heading">
         <h2>Vision, mission & values</h2>
+        <p>The institutional foundations guiding our clinical standards, ethics, and service delivery across Eastern Uganda and beyond.</p>
       </div>
       <div class="container values-grid">
-        <article class="values-card">
-          <h3>Vision</h3>
-          <p>To be a leading healthcare provider known for affordable, reliable, and compassionate services.</p>
+        <article class="values-card" id="values-card-vision">
+          <div class="values-tag">Vision</div>
+          <h3>Leading Healthcare Excellence</h3>
+          <p class="values-quote">“Leading healthcare excellence in Eastern Region of Uganda and beyond.”</p>
+          <p class="values-desc">Striving to be the region's benchmark for reliable clinical outcomes, patient safety, modern facilities, and institutional integrity.</p>
         </article>
-        <article class="values-card">
-          <h3>Mission</h3>
-          <p>To offer accessible healthcare, training, and research while maintaining the highest standards of safety and quality.</p>
+
+        <article class="values-card" id="values-card-mission">
+          <div class="values-tag">Mission</div>
+          <h3>Safe, Affordable Care</h3>
+          <p class="values-quote">“To provide safe, affordable and compassionate healthcare through expertise, innovation, technology and evidence based practice.”</p>
+          <p class="values-desc">Delivering prompt, patient-centered care and preventative interventions that protect lives and empower our community.</p>
         </article>
-        <article class="values-card">
-          <h3>Core values</h3>
-          <ul>
-            <li>Competence</li>
-            <li>Compassion</li>
-            <li>Confidentiality</li>
-            <li>Respect</li>
-            <li>Innovation</li>
-          </ul>
+
+        <article class="values-card" id="values-card-core">
+          <div class="values-tag">Core Principles</div>
+          <h3>Our Core Values</h3>
+          <p class="values-desc" style="margin-bottom: 0.75rem;">Eight foundational pillars that govern our ethical conduct, teamwork, and daily hospital service:</p>
+          <div class="values-pills-grid">
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Competence</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Compassion</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Confidentiality</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Integrity</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Respect</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Innovation</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Equity</span>
+            <span class="value-pill"><i class="fas fa-check" aria-hidden="true"></i> Teamwork</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section-review">
+    <section class="section-review" id="leadership-section">
       <div class="container section-heading">
         <h2>Our leadership</h2>
-        <p>Experienced clinicians and support staff working together to deliver high-quality medical services.</p>
+        <p><strong>Our Leadership Promise:</strong> “Together, we combine experience, integrity, innovation and compassionate leadership to build a healthcare institution that earns trust, delivers excellence and transforms lives”</p>
       </div>
-      <div class="container overview-grid">
-        <article class="card">
-          <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="Executive director">
-          <h3>Dr. John</h3>
-          <p>As Executive Director, Dr. John leads our team with a focus on compassionate care, excellence, and community partnership.</p>
+      <div class="container leaders-grid">
+        <!-- CEO -->
+        <article class="leader-card" id="leader-ceo">
+          <div class="leader-card-header">
+            <div class="leader-image-box">
+              <img src="anonymous.jpg" alt="Dr. Oseko Anthony - Chief Executive Officer" class="leader-profile-img">
+            </div>
+            <div class="leader-heading-info">
+              <h3>Dr. Oseko Anthony</h3>
+              <div class="leader-role-tag">Chief Executive Officer (CEO)</div>
+              <div class="leader-creds-tag">MBChB, DHSM/L, DCM</div>
+            </div>
+          </div>
+          <div class="leader-bio-content">
+            <p>Dr. Oseko Anthony is a healthcare professional and health service manager with over eight years of progressive experience across public, private not for profit and private for profit health care settings. He has served in health facility leadership and management roles, gaining practical expertise in healthcare operations, service delivery, quality improvement and institutional development.</p>
+            <p>With academic training in Health Services Management, Dr Oseko combines Clinical and managerial expertise to advance patient centered care, operational excellence, innovation, integrity and sustainable healthcare development.</p>
+            <p>As CEO of St. Anthony Doctors’ Avenue, his vision is to build a trusted, modern and accessible healthcare institution that delivers excellence in care and better health outcomes for communities in Eastern Uganda and beyond.</p>
+          </div>
+        </article>
+
+        <!-- Chief Operations Manager -->
+        <article class="leader-card" id="leader-com">
+          <div class="leader-card-header">
+            <div class="leader-image-box">
+              <img src="anonymous.jpg" alt="Ms. Sarah Aluko - Chief Operations Manager" class="leader-profile-img">
+            </div>
+            <div class="leader-heading-info">
+              <h3>Ms. Sarah Aluko</h3>
+              <div class="leader-role-tag">Chief Operations Manager</div>
+              <div class="leader-creds-tag">MBA, PG-M/E, BQE</div>
+            </div>
+          </div>
+          <div class="leader-bio-content">
+            <p>Ms. Sarah Aluko is a dedicated results oriented professional with over 6 years of serving as the Chief Operations Manager at St. Anthony Doctors’ Avenue. She brings strong expertise in programme co-ordination, healthcare operations, monitoring and evaluation, performance improvement and stakeholder engagement.</p>
+            <p>With postgraduate academic training in Monitoring and Evaluation (M&E), Ms. Aluko combines practical experience with evidence driven management to strengthen service quality, accountability and organizational performance.</p>
+            <p>As our Chief Operations Manager, she is committed to building efficient, patient centered and accountable systems that translate the organization’s vision, mission and core values into exceptional healthcare delivery.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -99,7 +169,6 @@
       <!-- Monthly Community Newsletter Subscription -->
       <div class="footer-newsletter">
         <div class="footer-newsletter-copy">
-          <span class="newsletter-badge"><i class="fas fa-paper-plane"></i> Monthly Community Newsletter</span>
           <h3>Stay updated on health campaigns & facility services</h3>
           <p>Subscribe to receive monthly medical advice, outreach schedules, and new healthcare options in Soroti.</p>
         </div>
@@ -131,7 +200,7 @@
             <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
             <div class="brand-text">
               <span class="company-name">St. Anthony Doctors' Avenue</span>
-              <span class="tagline">Patient-centered care for Soroti.</span>
+              <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
             </div>
           </a>
           <p>Delivering trusted healthcare solutions with professionalism and compassion.</p>
@@ -145,10 +214,10 @@
           <h4>Explore</h4>
           <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about.html">About</a>
+            <a href="departments.html">Departments</a>
             <a href="gallery.html">Gallery</a>
-            <a href="directorates.html">Departments</a>
+            <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>

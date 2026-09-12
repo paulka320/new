@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Departments | St. Anthony Doctors' Avenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +17,7 @@
         <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
         <div class="brand-text">
           <span class="company-name">St. Anthony Doctors' Avenue</span>
-          <span class="tagline">Your life matters.</span>
+          <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
         </div>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation"><span></span></button>
@@ -24,6 +27,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="departments.html" class="active">Departments</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -31,16 +35,21 @@
   </header>
 
   <main>
-    <section class="page-hero container" id="departments-hero">
-      <h1>Hospital departments & clinical divisions</h1>
-      <p>Our healthcare facility is structured to deliver seamless, multidisciplinary medical care across specialized clinical departments, emergency theatres, and advanced diagnostics in Soroti.</p>
+    <section class="page-hero" id="departments-hero">
+      <div class="container page-hero-container">
+        <h1>Hospital departments & clinical divisions</h1>
+        <div class="page-hero-text">
+          <p class="lead-paragraph">Our hospital departments and clinical divisions work as one integrated team to provide comprehensive, safe and patient centered healthcare.</p>
+          <p>Led by qualified professionals and supported by modern technology, each division is committed to clinical excellence, compassionate service, innovation, teamwork and better health outcomes.</p>
+        </div>
+        <div class="quote-highlight-banner">“Integrated Care. Clinical Excellence. Better Outcomes”</div>
+      </div>
     </section>
 
     <!-- Meet Our Departments Section -->
     <section class="section-departments" id="meet-our-departments" aria-labelledby="dept-heading">
       <div class="container">
         <div class="section-heading">
-          <span class="dept-badge-pill"><i class="fas fa-hospital-user" aria-hidden="true"></i> Specialized Clinical Units</span>
           <h2 id="dept-heading">Meet Our Departments</h2>
           <p>Explore our specialized medical divisions, staffed by compassionate healthcare experts equipped with modern diagnostic and therapeutic facilities.</p>
         </div>
@@ -48,244 +57,183 @@
         <div class="dept-grid" id="dept-cards-grid">
           <!-- Department 1: Medicine -->
           <article class="dept-card" id="dept-card-medicine">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-stethoscope"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> 24/7 Clinical Wing</span>
-            </div>
             <h3>Department of Medicine</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-user-doctor" aria-hidden="true"></i>
-              <span>Led by Dr. Patrick Ochen, Senior Physician</span>
+              <span>Department Clinical Lead (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Provides specialized diagnostic evaluations, inpatient medical management, and ongoing therapeutic care for complex internal conditions, acute adult illnesses, and chronic health challenges.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Adult Internal Medicine</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Cardiology & ECG Triage</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Diabetes & Hypertension Care</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Infectious Disease Therapy</li>
+                <li>Adult Internal Medicine</li>
+                <li>Cardiology & ECG Triage</li>
+                <li>Diabetes & Hypertension Care</li>
+                <li>Infectious Disease Therapy</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24 Hours</span>
               </div>
               <a href="index.html#appointment-booking" class="dept-action-btn" id="btn-dept-medicine">
-                <span>Book Consultation</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Book Consultation &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 2: Surgery -->
           <article class="dept-card" id="dept-card-surgery">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-procedures"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Emergency Theatre Ready</span>
-            </div>
             <h3>Department of Surgery</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-user-doctor" aria-hidden="true"></i>
-              <span>Led by Dr. Micheal Ebelu, Chief Medical Officer</span>
+              <span>Surgical Team & Clinical Lead (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               State-of-the-art sterile surgical suites and dedicated recovery units delivering emergency trauma surgeries, life-saving abdominal interventions, and scheduled minor elective operations.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> General & Abdominal Surgery</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Acute Trauma Resuscitation</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Minor Outpatient Procedures</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Post-Operative Ward Care</li>
+                <li>General & Abdominal Surgery</li>
+                <li>Acute Trauma Resuscitation</li>
+                <li>Minor Outpatient Procedures</li>
+                <li>Post-Operative Ward Care</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24-Hour Coverage</span>
               </div>
               <a href="index.html#appointment-booking" class="dept-action-btn" id="btn-dept-surgery">
-                <span>Book Surgical Visit</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Book Surgical Visit &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 3: Pediatrics -->
           <article class="dept-card" id="dept-card-pediatrics">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-baby"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Dedicated Child Ward</span>
-            </div>
             <h3>Department of Pediatrics</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-user-doctor" aria-hidden="true"></i>
-              <span>Led by Dr. Grace Akello, Consultant Pediatrician</span>
+              <span>Pediatric Specialist Team (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Dedicated to compassionate, child-centered medical care for newborns, toddlers, and adolescents. Offers gentle diagnostic assessments, routine childhood vaccinations, and neonatal stabilization.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Neonatal Care & Nursery</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Child Immunization Drives</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Pediatric Emergency Care</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Nutritional Rehabilitation</li>
+                <li>Neonatal Care & Nursery</li>
+                <li>Child Immunization Drives</li>
+                <li>Pediatric Emergency Care</li>
+                <li>Nutritional Rehabilitation</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24 Hours</span>
               </div>
               <a href="index.html#appointment-booking" class="dept-action-btn" id="btn-dept-pediatrics">
-                <span>Book Pediatric Care</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Book Pediatric Care &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 4: Diagnostics -->
           <article class="dept-card" id="dept-card-diagnostics">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-microscope"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Rapid Diagnostics</span>
-            </div>
             <h3>Department of Diagnostics</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-vial-virus" aria-hidden="true"></i>
-              <span>Lead Biomedical & Imaging Specialists</span>
+              <span>Biomedical & Diagnostic Team (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Equipped with modern laboratory analyzers and ultrasound radiology systems to ensure accurate, rapid test results that empower physicians with critical clinical insight.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Automated Complete Blood Count</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Malaria, Typhoid & Serology</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Digital Ultrasound Imaging</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Clinical Chemistry & Urinalysis</li>
+                <li>Automated Complete Blood Count</li>
+                <li>Malaria, Typhoid & Serology</li>
+                <li>Digital Ultrasound Imaging</li>
+                <li>Clinical Chemistry & Urinalysis</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24 Hours</span>
               </div>
               <a href="contact.html" class="dept-action-btn" id="btn-dept-diagnostics">
-                <span>Inquire Lab Services</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Inquire Lab Services &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 5: Nursing -->
           <article class="dept-card" id="dept-card-nursing">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-user-nurse"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> 24/7 Bedside Care</span>
-            </div>
             <h3>Department of Nursing</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-user-nurse" aria-hidden="true"></i>
-              <span>Led by Sister Mary Apio, Director of Nursing</span>
+              <span>Nursing Directorate Team (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Our 40+ member nursing team delivers continuous bedside monitoring, sterile dressing workflows, empathetic medication administration, and respectful patient support around the clock.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Continuous Vital Signs Triage</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Inpatient Ward Administration</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Surgical Wound Care</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Patient Advocacy & Comfort</li>
+                <li>Continuous Vital Signs Triage</li>
+                <li>Inpatient Ward Administration</li>
+                <li>Surgical Wound Care</li>
+                <li>Patient Advocacy & Comfort</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24-Hour Shifts</span>
               </div>
               <a href="contact.html" class="dept-action-btn" id="btn-dept-nursing">
-                <span>Inquire with Nursing</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Inquire with Nursing &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 6: Rehabilitation -->
           <article class="dept-card" id="dept-card-rehab">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-person-walking"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Restorative Care</span>
-            </div>
             <h3>Department of Rehabilitation</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-heart-circle-check" aria-hidden="true"></i>
-              <span>Senior Physiotherapy Clinicians</span>
+              <span>Physiotherapy & Rehabilitation Team (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Tailored physiotherapy, posture training, and neurological recovery protocols designed to restore pain-free movement, physical stamina, and personal independence.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Post-Operative Physical Therapy</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Stroke Recovery Protocols</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Joint Mobility & Back Pain Relief</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Gait Training & Assistive Devices</li>
+                <li>Post-Operative Physical Therapy</li>
+                <li>Stroke Recovery Protocols</li>
+                <li>Joint Mobility & Back Pain Relief</li>
+                <li>Gait Training & Assistive Devices</li>
               </ul>
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24 Hours</span>
               </div>
               <a href="contact.html" class="dept-action-btn" id="btn-dept-rehab">
-                <span>Book Physiotherapy</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Book Physiotherapy &rarr;</span>
               </a>
             </div>
           </article>
 
           <!-- Department 7: Public Health -->
           <article class="dept-card" id="dept-card-public-health">
-            <div class="dept-card-header">
-              <div class="dept-icon-box" aria-hidden="true">
-                <i class="fas fa-hand-holding-medical"></i>
-              </div>
-              <span class="dept-status-badge"><i class="fas fa-circle-check" aria-hidden="true"></i> Community Health</span>
-            </div>
             <h3>Department of Public Health</h3>
             <div class="dept-lead-line">
-              <i class="fas fa-bullhorn" aria-hidden="true"></i>
-              <span>Community Outreach Coordinators</span>
+              <span>Public Health & Outreach Team (Recruitment in Progress)</span>
             </div>
             <p class="dept-description">
               Extending vital medical resources across Soroti and neighboring rural parishes through community vaccination campaigns, maternal wellness forums, and mobile health outreach.
             </p>
             <div class="dept-services-box">
-              <h4><i class="fas fa-notes-medical" aria-hidden="true"></i> Key Capabilities:</h4>
+              <h4>Key Capabilities:</h4>
               <ul>
                 <li><i class="fas fa-check" aria-hidden="true"></i> Community Vaccine Drives</li>
                 <li><i class="fas fa-check" aria-hidden="true"></i> Maternal & Child Health Forums</li>
@@ -295,12 +243,10 @@
             </div>
             <div class="dept-card-footer">
               <div class="dept-schedule-pill">
-                <i class="fas fa-clock" aria-hidden="true"></i>
                 <span>Daily &bull; 24 Hours</span>
               </div>
               <a href="contact.html" class="dept-action-btn" id="btn-dept-publichealth">
-                <span>Inquire Outreach</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <span>Inquire Outreach &rarr;</span>
               </a>
             </div>
           </article>
@@ -312,7 +258,8 @@
     <section class="section-table" id="departments-schedule">
       <div class="container section-heading">
         <h2>Department schedule & hours overview</h2>
-        <p>A quick comparative schedule of operating hours, clinic availability, and core services across all departments.</p>
+        <p>We are committed to convenient, timely and reliable healthcare. Our clinical departments operate according to scheduled service hours, with emergency and essential services available 24/7. Department specific consultation, diagnostics and specialist hours are communicated clearly to patients and updated regularly.</p>
+        <div class="quote-highlight-banner">“Right Care. Right Time. Every Patient”</div>
       </div>
       <div class="container">
         <div class="table-responsive">
@@ -380,7 +327,6 @@
       <!-- Monthly Community Newsletter Subscription -->
       <div class="footer-newsletter">
         <div class="footer-newsletter-copy">
-          <span class="newsletter-badge"><i class="fas fa-paper-plane"></i> Monthly Community Newsletter</span>
           <h3>Stay updated on health campaigns & facility services</h3>
           <p>Subscribe to receive monthly medical advice, outreach schedules, and new healthcare options in Soroti.</p>
         </div>
@@ -412,7 +358,7 @@
             <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
             <div class="brand-text">
               <span class="company-name">St. Anthony Doctors' Avenue</span>
-              <span class="tagline">Patient-centered care for Soroti.</span>
+              <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
             </div>
           </a>
           <p>Delivering trusted healthcare solutions with professionalism and compassion.</p>
@@ -426,10 +372,10 @@
           <h4>Explore</h4>
           <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
             <a href="departments.html">Departments</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>

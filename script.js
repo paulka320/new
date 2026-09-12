@@ -418,36 +418,71 @@ function initCounters() {
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries, observerRef) => {
-      if (!entries[0].isIntersecting) {
+  let hasAnimated = false;
+
+  const animateCounters = () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    counters.forEach((counter) => {
+      const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+      const suffix = counter.getAttribute('data-suffix') || '';
+      
+      if (target <= 0) {
+        counter.textContent = '0' + suffix;
         return;
       }
 
-      counters.forEach((counter) => {
-        const target = Number(counter.dataset.target) || 0;
-        let current = 0;
-        const step = Math.max(1, Math.floor(target / 180));
+      const duration = 1800;
+      const startTime = performance.now();
 
-        const update = () => {
-          current += step;
-          if (current < target) {
-            counter.textContent = current.toLocaleString();
-            window.requestAnimationFrame(update);
-          } else {
-            counter.textContent = target.toLocaleString();
-          }
-        };
+      const step = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Quartic ease-out curve for natural deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(easeOut * target);
 
-        update();
-      });
+        counter.textContent = current.toLocaleString() + (progress >= 1 ? suffix : '');
 
-      observerRef.disconnect();
-    },
-    { threshold: 0.5 }
-  );
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          counter.textContent = target.toLocaleString() + suffix;
+        }
+      };
 
-  observer.observe(impactSection);
+      window.requestAnimationFrame(step);
+    });
+  };
+
+  // Check if already in viewport
+  const rect = impactSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    animateCounters();
+    return;
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries, observerRef) => {
+        if (entries[0] && entries[0].isIntersecting) {
+          animateCounters();
+          observerRef.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(impactSection);
+  } else {
+    // Fallback for older browsers
+    window.addEventListener('scroll', () => {
+      const r = impactSection.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.85) {
+        animateCounters();
+      }
+    }, { passive: true });
+  }
 }
 
 function initNewsletterForm() {

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | St. Anthony Doctors' Avenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +17,7 @@
         <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
         <div class="brand-text">
           <span class="company-name">St. Anthony Doctors' Avenue</span>
-          <span class="tagline">Your life matters.</span>
+          <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
         </div>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation"><span></span></button>
@@ -22,8 +25,9 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="departments.html">Departments</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -31,52 +35,84 @@
   </header>
 
   <main>
-    <section class="page-hero container">
-      <h1>Our services</h1>
-      <p>Explore the full range of care we provide to support your health and recovery.</p>
+    <section class="page-hero" id="services-hero">
+      <div class="container page-hero-container">
+        <h1>Our Healthcare Services</h1>
+        <div class="page-hero-text">
+          <p class="lead-paragraph">At St. Anthony Doctors’ Avenue, we are dedicated to providing comprehensive, patient centered and high quality healthcare.</p>
+          <p>Our experienced clinical teams utilize modern medical technology and evidence based practices to deliver compassionate care tailored to your individual health needs.</p>
+        </div>
+        <div class="quote-highlight-banner">“Comprehensive Care. Advanced Medicine. Dedicated to You”</div>
+      </div>
     </section>
 
-    <section class="section-feature">
+    <section class="section-feature" id="services-overview">
       <div class="container section-heading">
-        <h2>Clinical care options</h2>
-        <p>From acute treatment to preventive support, our hospital offers a broad spectrum of reliable health services.</p>
+        <h2>Overview of Services</h2>
+        <p>Explore the full spectrum of our clinical specialties, diagnostic units, and supportive healthcare solutions.</p>
       </div>
       <div class="container service-grid">
-        <article class="service-card">
-          <h3>Emergency care</h3>
-          <p>Urgent response and emergency treatment available 24/7.</p>
+        <!-- Service 1 -->
+        <article class="service-card" id="service-inpatient-outpatient">
+          <h3>Inpatient and Outpatient Care</h3>
+          <p>We provide 24/7 dedicated inpatient and outpatient healthcare services designed to ensure patient comfort, rapid recovery and continuous medical support.</p>
+          <div class="service-quote-pill">“Care When You Need It. Comfort Where You Heal”</div>
         </article>
-        <article class="service-card">
-          <h3>Pediatric services</h3>
-          <p>Specialized care for infants, children, and adolescents.</p>
+
+        <!-- Service 2 -->
+        <article class="service-card" id="service-specialized-clinics">
+          <h3>Specialized Clinics</h3>
+          <p>Our specialized clinics offer targeted, expert care for specific health conditions, led by experienced consultants and healthcare professionals.</p>
+          <div class="service-quote-pill">“Targeted Expertise for Better Health”</div>
         </article>
-        <article class="service-card">
-          <h3>Outpatient consultations</h3>
-          <p>Routine visits and follow-up care in a convenient setting.</p>
+
+        <!-- Service 3 -->
+        <article class="service-card" id="service-diagnostics-lab">
+          <h3>Diagnostics & Laboratory Services</h3>
+          <p>Accurate and timely diagnosis is essential for effective treatment. Our modern diagnostic and laboratory facilities are equipped to provide reliable results quickly.</p>
+          <div class="service-quote-pill">“Precision in Diagnosis. Confidence in Care”</div>
         </article>
-        <article class="service-card">
-          <h3>Inpatient admissions</h3>
-          <p>Comfortable wards for longer treatment and recovery periods.</p>
+
+        <!-- Service 4 -->
+        <article class="service-card" id="service-emergency-critical">
+          <h3>Emergency and Critical Care</h3>
+          <p>Medical emergencies require swift, coordinated and expert care. Our emergency and critical care teams are prepared 24/7 to provide life-saving interventions.</p>
+          <div class="service-quote-pill">“Rapid Response. Life Saving Care. Always Ready”</div>
         </article>
-        <article class="service-card">
-          <h3>Laboratory diagnostics</h3>
-          <p>Fast testing for blood work, samples, and clinical analysis.</p>
+
+        <!-- Service 5 -->
+        <article class="service-card" id="service-maternal-child">
+          <h3>Maternal and Child Health</h3>
+          <p>We prioritize the health and well-being of mothers, newborns and children through compassionate and comprehensive healthcare services.</p>
+          <div class="service-quote-pill">“Nurturing Life. Protecting Generations”</div>
         </article>
-        <article class="service-card">
-          <h3>Imaging services</h3>
-          <p>Radiology and ultrasound diagnostics for accurate care planning.</p>
+
+        <!-- Service 6 -->
+        <article class="service-card" id="service-preventive-community">
+          <h3>Preventive and Community Health Services</h3>
+          <p>We believe prevention is the foundation of a healthier community. Our programs focus on early detection, health education and wellness promotion.</p>
+          <div class="service-quote-pill">“Empowering Communities. Preventing Illness. Promoting Health”</div>
         </article>
-        <article class="service-card">
-          <h3>Dental health</h3>
-          <p>Oral care treatments for health, hygiene, and comfort.</p>
+
+        <!-- Service 7 -->
+        <article class="service-card" id="service-pharmacy">
+          <h3>Pharmacy and Medication Management</h3>
+          <p>Our fully stocked pharmacy provides safe, authentic and affordable medications, supported by professional pharmaceutical guidance.</p>
+          <div class="service-quote-pill">“Trusted Medicines. Professional Guidance. Safe Care”</div>
         </article>
-        <article class="service-card">
-          <h3>Maternal care</h3>
-          <p>Safe pregnancy support, delivery services, and postpartum care.</p>
+
+        <!-- Service 8 -->
+        <article class="service-card" id="service-surgical-theatre">
+          <h3>Surgical and Theatre Services</h3>
+          <p>We provide safe, modern and sterile surgical care for emergency, elective and minor surgical procedures.</p>
+          <div class="service-quote-pill">“Surgical Precision. Patient Safety. Expert Hands”</div>
         </article>
-        <article class="service-card">
-          <h3>Rehabilitation</h3>
-          <p>Physical therapy and counseling for stronger recovery.</p>
+
+        <!-- Service 9 -->
+        <article class="service-card" id="service-health-packages">
+          <h3>Health Packages</h3>
+          <p>Our structured healthcare packages provide affordable, proactive and comprehensive health assessments for individuals, families and organizations.</p>
+          <div class="service-quote-pill">“Proactive Care for a Healthier Tomorrow”</div>
         </article>
       </div>
     </section>
@@ -87,7 +123,6 @@
       <!-- Monthly Community Newsletter Subscription -->
       <div class="footer-newsletter">
         <div class="footer-newsletter-copy">
-          <span class="newsletter-badge"><i class="fas fa-paper-plane"></i> Monthly Community Newsletter</span>
           <h3>Stay updated on health campaigns & facility services</h3>
           <p>Subscribe to receive monthly medical advice, outreach schedules, and new healthcare options in Soroti.</p>
         </div>
@@ -119,7 +154,7 @@
             <img src="WhatsApp Image 2026-02-07 at 9.42.59 PM.jpeg" alt="St. Anthony Doctors' Avenue logo">
             <div class="brand-text">
               <span class="company-name">St. Anthony Doctors' Avenue</span>
-              <span class="tagline">Patient-centered care for Soroti.</span>
+              <span class="tagline">Where Expertise Meets Compassion For Healthier Lives</span>
             </div>
           </a>
           <p>Delivering trusted healthcare solutions with professionalism and compassion.</p>
@@ -133,10 +168,10 @@
           <h4>Explore</h4>
           <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
             <a href="about.html">About</a>
+            <a href="departments.html">Departments</a>
             <a href="gallery.html">Gallery</a>
-            <a href="directorates.html">Departments</a>
+            <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>
